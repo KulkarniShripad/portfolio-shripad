@@ -120,7 +120,7 @@ const VSCodeLayout = ({ children, activeFile, onFileChange }: VSCodeLayoutProps)
                   <file.icon className={isMobile ? "w-3 h-3" : "w-4 h-4"} />
                   <span className="truncate">{file.name}</span>
                   {activeFile === file.name && (
-                    <Circle className={isMobile ? "w-1.5 h-1.5" : "w-2 h-2"} />
+                   <Circle className="w-2 h-2 text-vscode-text-muted fill-current" />
                   )}
                 </button>
               ))}

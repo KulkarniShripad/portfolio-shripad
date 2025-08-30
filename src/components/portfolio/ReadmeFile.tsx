@@ -6,12 +6,11 @@ import developerPhoto from "@/assets/developer-photo.jpg";
 
 const ReadmeFile = () => {
   return (
-    <div className="p-6 font-mono text-vscode-text max-w-4xl mx-auto">
+    <div className="p-6 font-mono text-vscode-text max-w-4xl">
       {/* Header with line numbers */}
       <div className="flex">
-        {/* Line numbers */}
-        <div className="text-vscode-text-disabled text-sm mr-4 select-none hidden sm:block">
-          {Array.from({ length: 50 }, (_, i) => (
+      <div className="text-vscode-text-disabled text-sm mr-4 select-none">
+          {Array.from({ length: 80 }, (_, i) => (
             <div key={i + 1} className="leading-6">
               {(i + 1).toString().padStart(2, " ")}
             </div>
@@ -72,20 +71,20 @@ const ReadmeFile = () => {
             
             <div className="mb-6 space-y-2 text-left">
               <div>
-                <span className="text-vscode-text">- 🔭 Currently working on: </span>
+                <span className="text-vscode-text">- Currently working on: </span>
                 <span className="text-vscode-yellow">Building a strong foundation in Computer Engineering</span>
               </div>
               <div>
-                <span className="text-vscode-text">- 🌱 Learning: </span>
+                <span className="text-vscode-text">- Learning: </span>
                 <span className="text-vscode-green">MERN stack, System Design, OOP, DBMS, OS and many more...</span>
               </div>
               <div>
-                <span className="text-vscode-text">- 💼 Open to: </span>
+                <span className="text-vscode-text">- Open to: </span>
                 <span className="text-vscode-blue">Internships, Collaborations and Making friends 😄</span>
               </div>
               <div>
-                <span className="text-vscode-text">- ⚡ Fun fact: </span>
-                <span className="text-vscode-orange">I love trekking and nature so dont be surprised if you see me somewhere in the nature with my laptop and headphones with a cup of chai 😅 </span>
+                <span className="text-vscode-text">- Fun fact: </span>
+                <span className="text-vscode-orange">I love trekking and nature so dont be surprised if you see me somewhere in the nature with my laptop, headphones and a cup of chai 😅 </span>
               </div>
             </div>
             
@@ -208,10 +207,7 @@ const ReadmeFile = () => {
             </div>
             
             <div className="text-vscode-text-muted">
-              <span className="text-vscode-text">---</span>
-            </div>
-            <div className="text-vscode-text-muted">
-              <span className="text-vscode-text">💡 </span>
+              <span className="text-vscode-text"> - </span>
               <span className="text-vscode-orange">Feel free to explore my other files to learn more about my skills and projects!</span>
             </div>
           </div>
