@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Menu, X, Folder, FolderOpen, File, Circle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { useIsMobile } from "../hooks/use-mobile";
 
 interface VSCodeLayoutProps {
   children: React.ReactNode;
@@ -19,6 +20,7 @@ const files = [
 
 const VSCodeLayout = ({ children, activeFile, onFileChange }: VSCodeLayoutProps) => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const isMobile = useIsMobile();
 
   return (
     <div className="h-screen bg-vscode-bg font-mono flex flex-col">
@@ -57,12 +59,15 @@ const VSCodeLayout = ({ children, activeFile, onFileChange }: VSCodeLayoutProps)
         </div>
 
         {/* Sidebar */}
-        <div className={cn(
-          "w-64 bg-vscode-sidebar-bg border-r border-vscode-border transition-transform duration-300 ease-in-out",
-          "md:translate-x-0",
-          sidebarOpen ? "translate-x-0" : "-translate-x-full",
-          "md:relative absolute z-40 h-full"
-        )}>
+        <div
+          className={cn(
+            isMobile ? "w-48" : "w-64",
+            "bg-vscode-sidebar-bg border-r border-vscode-border transition-transform duration-300 ease-in-out",
+            "md:translate-x-0",
+            sidebarOpen ? "translate-x-0" : "-translate-x-full",
+            "md:relative absolute z-40 h-full"
+          )}
+        >
           <div className="p-3">
             <div className="flex items-center mb-4">
               <Folder className="w-4 h-4 text-vscode-text-muted mr-2" />
@@ -70,7 +75,7 @@ const VSCodeLayout = ({ children, activeFile, onFileChange }: VSCodeLayoutProps)
                 Portfolio Explorer
               </span>
             </div>
-            
+
             <div className="space-y-1">
               {files.map((file) => (
                 <button
@@ -80,14 +85,15 @@ const VSCodeLayout = ({ children, activeFile, onFileChange }: VSCodeLayoutProps)
                     setSidebarOpen(false); // Close mobile menu on selection
                   }}
                   className={cn(
-                    "w-full flex items-center space-x-2 px-2 py-1 text-left text-sm rounded transition-colors",
+                    "w-full flex items-center space-x-2 px-2 rounded transition-colors",
+                    isMobile ? "text-xs py-1" : "text-sm py-1.5",
                     activeFile === file.name
                       ? "bg-vscode-blue text-white"
                       : "text-vscode-text hover:bg-vscode-sidebar-hover"
                   )}
                 >
-                  <file.icon className="w-4 h-4" />
-                  <span>{file.name}</span>
+                  <file.icon className={isMobile ? "w-3 h-3" : "w-4 h-4"} />
+                  <span className="truncate">{file.name}</span>
                 </button>
               ))}
             </div>
@@ -97,23 +103,24 @@ const VSCodeLayout = ({ children, activeFile, onFileChange }: VSCodeLayoutProps)
         {/* Main Content Area */}
         <div className="flex-1 flex flex-col">
           {/* Tab Bar */}
-          <div className="bg-vscode-tab-inactive border-b border-vscode-border">
+          <div className="bg-vscode-tab-inactive border-b border-vscode-border overflow-x-auto">
             <div className="flex">
               {files.map((file) => (
                 <button
                   key={file.name}
                   onClick={() => onFileChange(file.name)}
                   className={cn(
-                    "px-4 py-2 text-sm border-r border-vscode-border transition-colors flex items-center space-x-2 max-w-xs",
+                    "flex items-center border-r border-vscode-border transition-colors max-w-xs",
+                    isMobile ? "px-2 py-1 text-xs" : "px-4 py-2 text-sm",
                     activeFile === file.name
                       ? "bg-vscode-tab-active text-vscode-text"
                       : "bg-vscode-tab-inactive text-vscode-text-muted hover:bg-vscode-tab-hover"
                   )}
                 >
-                  <file.icon className="w-4 h-4" />
+                  <file.icon className={isMobile ? "w-3 h-3" : "w-4 h-4"} />
                   <span className="truncate">{file.name}</span>
                   {activeFile === file.name && (
-                    <Circle className="w-2 h-2 text-vscode-text-muted fill-current" />
+                    <Circle className={isMobile ? "w-1.5 h-1.5" : "w-2 h-2"} />
                   )}
                 </button>
               ))}
@@ -128,13 +135,14 @@ const VSCodeLayout = ({ children, activeFile, onFileChange }: VSCodeLayoutProps)
       </div>
 
       {/* Status Bar */}
-      <div className="h-6 bg-vscode-blue border-t border-vscode-border flex items-center justify-between px-4 text-xs">
-        <div className="text-white">
-          Portfolio v1.0.0
-        </div>
-        <div className="text-white">
-          TypeScript • Portfolio
-        </div>
+      <div
+        className={cn(
+          "h-6 bg-vscode-blue border-t border-vscode-border flex items-center justify-between",
+          isMobile ? "px-2 text-[10px]" : "px-4 text-xs"
+        )}
+      >
+        <div className="text-white">Portfolio v1.0.0</div>
+        <div className="text-white">TypeScript • Portfolio</div>
       </div>
     </div>
   );

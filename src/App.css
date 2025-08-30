@@ -1,10 +1,76 @@
 #root {
-  max-width: 1280px;
+  max-width: 100%;
   margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  padding: 0;
+  text-align: left; /* no centering globally */
+  overflow-x: hidden; /* prevent root from overscrolling */
 }
 
+/* Global fix for wrapping */
+* {
+  max-width: 100%;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal; /* ensures wrapping instead of inline overflow */
+}
+
+/* Allow scroll if still needed (e.g., long code, tables) */
+body {
+  overflow-x: auto;
+}
+
+/* Base font size */
+html {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Large screens */
+@media (min-width: 1024px) {
+  html {
+    font-size: 17px;
+  }
+}
+
+@media (min-width: 1280px) {
+  html {
+    font-size: 18px;
+  }
+}
+
+/* Medium screens */
+@media (min-width: 768px) and (max-width: 1023px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+/* Small screens (phones <600px) */
+@media (max-width: 600px) {
+  html {
+    font-size: 14px;
+  }
+  body,
+  #root {
+    padding: 0.75rem;
+  }
+}
+
+/* Extra small phones (<400px) */
+@media (max-width: 400px) {
+  html {
+    font-size: 13px;
+  }
+}
+
+/* Ultra tiny (<320px) */
+@media (max-width: 320px) {
+  html {
+    font-size: 12px;
+  }
+}
+
+/* Logo styles (unchanged) */
 .logo {
   height: 6em;
   padding: 1.5em;

@@ -27,7 +27,7 @@ const PortfolioApp = () => {
   };
 
   return (
-    <div className="dark">
+    <div className="dark text-sm md:text-base lg:text-lg">
       <VSCodeLayout activeFile={activeFile} onFileChange={setActiveFile}>
         {renderFileContent()}
       </VSCodeLayout>

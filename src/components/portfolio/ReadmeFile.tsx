@@ -6,10 +6,11 @@ import developerPhoto from "@/assets/developer-photo.jpg";
 
 const ReadmeFile = () => {
   return (
-    <div className="p-6 font-mono text-vscode-text max-w-4xl">
+    <div className="p-6 font-mono text-vscode-text max-w-4xl mx-auto">
       {/* Header with line numbers */}
       <div className="flex">
-        <div className="text-vscode-text-disabled text-sm mr-4 select-none">
+        {/* Line numbers */}
+        <div className="text-vscode-text-disabled text-sm mr-4 select-none hidden sm:block">
           {Array.from({ length: 50 }, (_, i) => (
             <div key={i + 1} className="leading-6">
               {(i + 1).toString().padStart(2, " ")}
@@ -17,23 +18,28 @@ const ReadmeFile = () => {
           ))}
         </div>
         
+        {/* Main content */}
         <div className="flex-1">
-          {/* File content */}
           <div className="leading-6">
+            {/* About Me */}
             <div className="mb-6">
               <span className="text-vscode-purple">#</span>
               <span className="text-vscode-green"> About Me </span>
             </div>
             
             <div className="mb-8 flex flex-col md:flex-row md:items-start gap-6">
-              <Avatar className="w-50 h-60 border-2 border-vscode-border">
-                <AvatarImage src={developerPhoto} alt="Shripad Kulkarni" />
-                <AvatarFallback className="bg-vscode-bg-tertiary text-vscode-text text-2xl">
-                  SK
-                </AvatarFallback>
-              </Avatar>
+              {/* Avatar */}
+              <div className="flex justify-center md:justify-start">
+                <Avatar className="w-40 h-40 rounded-full border-2 border-vscode-border">
+                  <AvatarImage src={developerPhoto} alt="Shripad Kulkarni" />
+                  <AvatarFallback className="bg-vscode-bg-tertiary text-vscode-text text-2xl">
+                    SK
+                  </AvatarFallback>
+                </Avatar>
+              </div>
               
-              <div className="flex-1">
+              {/* Intro Text */}
+              <div className="flex-1 text-left">
                 <div className="mb-4">
                   <span className="text-vscode-purple">##</span>
                   <span className="text-vscode-blue"> Hi there! 👋</span>
@@ -58,12 +64,13 @@ const ReadmeFile = () => {
               </div>
             </div>
             
+            {/* Quick Facts */}
             <div className="mb-6">
               <span className="text-vscode-purple">###</span>
               <span className="text-vscode-green"> Quick Facts</span>
             </div>
             
-            <div className="mb-6 space-y-2">
+            <div className="mb-6 space-y-2 text-left">
               <div>
                 <span className="text-vscode-text">- 🔭 Currently working on: </span>
                 <span className="text-vscode-yellow">Building a strong foundation in Computer Engineering</span>
@@ -78,10 +85,11 @@ const ReadmeFile = () => {
               </div>
               <div>
                 <span className="text-vscode-text">- ⚡ Fun fact: </span>
-                <span className="text-vscode-orange">I love trekking and nature so dont be surprised if you see me somewhere in the nature with my laptop and headphones and with a cup of chai 😅 </span>
+                <span className="text-vscode-orange">I love trekking and nature so dont be surprised if you see me somewhere in the nature with my laptop and headphones with a cup of chai 😅 </span>
               </div>
             </div>
             
+            {/* Tech Stack */}
             <div className="mb-6">
               <span className="text-vscode-purple">###</span>
               <span className="text-vscode-green"> Tech Stack</span>
@@ -112,6 +120,7 @@ const ReadmeFile = () => {
               ))}
             </div>
             
+            {/* Connect With Me */}
             <div className="mb-6">
               <span className="text-vscode-purple">###</span>
               <span className="text-vscode-green"> Connect With Me</span>
@@ -157,14 +166,10 @@ const ReadmeFile = () => {
               </Button>
             </div>
             
-            <div className="mb-6">
-              <span className="text-vscode-purple">###</span>
-              <span className="text-vscode-green"> GitHub Stats</span>
-            </div>
-            
-            <div className="mb-6 space-y-2">
+            {/* Code Block */}
+            <div className="mb-6 space-y-2 text-left overflow-x-auto">
               <div>
-                <span className="text-vscode-text">```javascript</span>
+                <span className="text-vscode-text">```</span>
               </div>
               <div>
                 <span className="text-vscode-blue">const</span>
