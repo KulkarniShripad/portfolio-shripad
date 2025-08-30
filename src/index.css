@@ -1,0 +1,108 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* VS Code themed design system - authentic colors from VS Code dark theme
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* VS Code Dark Theme Colors */
+    --vscode-bg: 210 11% 12%;                    /* #1e1e1e */
+    --vscode-bg-secondary: 210 10% 15%;          /* #252526 */
+    --vscode-bg-tertiary: 210 9% 18%;           /* #2d2d30 */
+    --vscode-bg-quaternary: 210 8% 21%;         /* #383838 */
+    
+    --vscode-border: 210 13% 20%;               /* #3c3c3c */
+    --vscode-border-light: 210 12% 25%;        /* #464647 */
+    
+    --vscode-text: 0 0% 88%;                    /* #cccccc */
+    --vscode-text-secondary: 0 0% 73%;         /* #bbbbbb */
+    --vscode-text-muted: 0 0% 58%;             /* #969696 */
+    --vscode-text-disabled: 0 0% 43%;          /* #6e6e6e */
+    
+    /* VS Code Accent Colors */
+    --vscode-blue: 214 100% 68%;               /* #007acc */
+    --vscode-blue-light: 214 100% 78%;        /* #4fc3f7 */
+    --vscode-green: 137 65% 55%;               /* #4ec9b0 */
+    --vscode-yellow: 55 100% 70%;              /* #dcdcaa */
+    --vscode-orange: 25 85% 65%;               /* #ce9178 */
+    --vscode-purple: 286 60% 67%;              /* #c586c0 */
+    --vscode-red: 355 79% 65%;                 /* #f44747 */
+    
+    /* Tab Colors */
+    --vscode-tab-active: 210 10% 15%;          /* #252526 */
+    --vscode-tab-inactive: 210 11% 12%;        /* #1e1e1e */
+    --vscode-tab-hover: 210 9% 18%;            /* #2d2d30 */
+    
+    /* Activity Bar */
+    --vscode-activity-bar: 210 13% 9%;         /* #181818 */
+    --vscode-activity-bar-active: 214 100% 68%;
+    
+    /* Sidebar */
+    --vscode-sidebar: 210 10% 15%;             /* #252526 */
+    --vscode-sidebar-hover: 210 9% 18%;       /* #2d2d30 */
+    
+    /* Map to semantic tokens */
+    --background: var(--vscode-bg);
+    --foreground: var(--vscode-text);
+    
+    --card: var(--vscode-bg-secondary);
+    --card-foreground: var(--vscode-text);
+    
+    --popover: var(--vscode-bg-tertiary);
+    --popover-foreground: var(--vscode-text);
+    
+    --primary: var(--vscode-blue);
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: var(--vscode-bg-secondary);
+    --secondary-foreground: var(--vscode-text);
+    
+    --muted: var(--vscode-bg-tertiary);
+    --muted-foreground: var(--vscode-text-muted);
+    
+    --accent: var(--vscode-blue);
+    --accent-foreground: 0 0% 100%;
+    
+    --destructive: var(--vscode-red);
+    --destructive-foreground: 0 0% 100%;
+    
+    --border: var(--vscode-border);
+    --input: var(--vscode-bg-quaternary);
+    --ring: var(--vscode-blue);
+    
+    --radius: 0.125rem;
+    
+    /* VS Code specific tokens */
+    --tab-active: var(--vscode-tab-active);
+    --tab-inactive: var(--vscode-tab-inactive);
+    --tab-hover: var(--vscode-tab-hover);
+    --activity-bar: var(--vscode-activity-bar);
+    --sidebar-bg: var(--vscode-sidebar);
+    --sidebar-hover: var(--vscode-sidebar-hover);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-mono;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  
+  html {
+    height: 100%;
+  }
+  
+  #root {
+    height: 100vh;
+    width: 100vw;
+  }
+}
