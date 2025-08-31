@@ -10,7 +10,7 @@ const ProjectsFile = () => {
       description:
         "Developed an app streamlining payments and processes for MSEB employees, targeted at Workers Union (ELA) members.",
       technologies: ["Flutter", "Firebase"],
-      githubUrl: "#", // add repo if public
+      githubUrl: "https://github.com/KulkarniShripad", // add repo if public
       liveUrl: "#",
       stars: 0,
       status: "Completed",
@@ -237,7 +237,7 @@ const ProjectsFile = () => {
                         </a>
                       </Button>
 
-                      <Button
+                      {/* <Button
                         size="sm"
                         className="bg-vscode-blue hover:bg-vscode-blue-light text-white"
                         asChild
@@ -246,7 +246,7 @@ const ProjectsFile = () => {
                           <ExternalLink className="w-4 h-4 mr-1" />
                           Demo
                         </a>
-                      </Button>
+                      </Button> */}
                     </div>
                   </div>
                 </div>

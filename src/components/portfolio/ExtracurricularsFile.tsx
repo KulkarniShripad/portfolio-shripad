@@ -90,7 +90,7 @@ const ExtracurricularsFile = () => {
                 <h3 className="text-vscode-yellow font-semibold">
                   MasterCard {"<"}Code for Change{">"} – NGO Solution Challenge
                 </h3>
-                <Badge className="bg-vscode-blue text-vscode-bg">Top 25</Badge>
+                <Badge className="bg-vscode-blue text-vscode-bg">25 Aug 2025</Badge>
               </div>
               <div className="flex items-center space-x-2 text-xs text-vscode-text-muted mb-2">
                 <Calendar className="w-3 h-3" />

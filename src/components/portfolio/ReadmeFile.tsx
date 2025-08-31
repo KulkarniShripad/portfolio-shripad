@@ -186,7 +186,7 @@ const ReadmeFile = () => {
               </div>
               <div className="pl-4">
                 <span className="text-vscode-text">  role: </span>
-                <span className="text-vscode-green">"Studnet | Developer"</span>
+                <span className="text-vscode-green">"Student | Developer"</span>
                 <span className="text-vscode-text">,</span>
               </div>
               <div className="pl-4">
